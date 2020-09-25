@@ -3,12 +3,10 @@ package br.com.henrique.teste;
 import br.com.henrique.AppiumDriverConfiguracao;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,9 +32,7 @@ public class CadastroTeste {
     @Test
     public void impedirCadastroUsuarioSenhasDiferentes() {
         MobileElement botaoCadastro = appiumDriver.findElementById("br.com.alura.aluraesporte:id/login_botao_cadastrar_usuario");
-        TouchActions acaoToque = new TouchActions(appiumDriver);
-        acaoToque.longPress(botaoCadastro).release().perform();
-        //botaoCadastro.click();
+        botaoCadastro.click();
 
         MobileElement inputNome = appiumDriver.findElementById("br.com.alura.aluraesporte:id/input_nome");
         inputNome.sendKeys("Henrique");
@@ -58,9 +54,8 @@ public class CadastroTeste {
     }
 
     @Test
-    public void cadastrarUsuario() throws InterruptedException {
+    public void cadastrarUsuario() {
         MobileElement botaoCadastro = appiumDriver.findElementById("br.com.alura.aluraesporte:id/login_botao_cadastrar_usuario");
-     new Actions(appiumDriver).clickAndHold(botaoCadastro).perform();
         botaoCadastro.click();
 
 
