@@ -2,6 +2,7 @@ package br.com.henrique;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,15 +31,13 @@ public class AppiumDriverConfiguracao {
     }
 
     public AppiumDriverConfiguracao(String caminhoApk, String caminhoServidorAppium) {
-
         File apk = new File(caminhoApk);
         URL urlConexao = null;
 
         DesiredCapabilities configuracoes = new DesiredCapabilities();
         configuracoes.setCapability(MobileCapabilityType.APP, apk.getAbsolutePath());
         configuracoes.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-        configuracoes.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-/*        configuracoes.setCapability(MobileCapabilityType.FULL_RESET, true);*/
+        configuracoes.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
 
         try {
             urlConexao = new URL(caminhoServidorAppium);
