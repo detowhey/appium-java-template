@@ -41,8 +41,8 @@ public class AppiumDriverConfiguracao {
 
         try {
             urlConexao = new URL(caminhoServidorAppium);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        } catch (MalformedURLException excecao) {
+            excecao.printStackTrace();
         }
 
         appiumDriver = new AppiumDriver<>(Objects.requireNonNull(urlConexao), configuracoes);

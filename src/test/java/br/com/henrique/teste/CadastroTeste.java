@@ -8,7 +8,6 @@ import static org.junit.Assert.assertEquals;
 
 public class CadastroTeste extends BaseTeste {
 
-
     private final CadastroPagina cadastroPagina = new CadastroPagina(getAppiumDriver());
     private final LoginPagina loginPagina = new LoginPagina(getAppiumDriver());
 

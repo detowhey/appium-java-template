@@ -23,10 +23,6 @@ public class Interacao {
         pesuisarElementoPorId(id).sendKeys(texto);
     }
 
-    public String retornarTextoElementoId(String id) {
-        return pesuisarElementoPorId(id).getText();
-    }
-
     public void voltarPagina() {
         appiumDriver.navigate().back();
     }
