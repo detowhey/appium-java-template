@@ -46,6 +46,5 @@ public class AppiumDriverConfiguracao {
         }
 
         appiumDriver = new AppiumDriver<>(Objects.requireNonNull(urlConexao), configuracoes);
-        appiumDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 }

@@ -14,7 +14,7 @@ public class CadastroPagina extends BasePagina {
     }
 
     public void inseirTextoSenha(String texto) {
-        getInteracao().inseirTextoElementoId("r.com.alura.aluraesporte:id/input_senha", texto);
+        getInteracao().inseirTextoElementoId("br.com.alura.aluraesporte:id/input_senha", texto);
     }
 
     public void inserirTextoConfirmarSenha(String texto) {

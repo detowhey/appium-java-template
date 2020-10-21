@@ -2,14 +2,23 @@ package br.com.henrique.teste;
 
 import br.com.henrique.pagina.CadastroPagina;
 import br.com.henrique.pagina.LoginPagina;
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class CadastroTeste extends BaseTeste {
 
-    private final CadastroPagina cadastroPagina = new CadastroPagina(getAppiumDriver());
-    private final LoginPagina loginPagina = new LoginPagina(getAppiumDriver());
+    private CadastroPagina cadastroPagina;
+    private LoginPagina loginPagina;
+
+
+    @Before
+    public void iniciarObjetos() {
+        cadastroPagina = new CadastroPagina(getAppiumDriver());
+        loginPagina = new LoginPagina(getAppiumDriver());
+    }
 
     @Test
     public void impedirCadastroUsuarioSenhasDiferentes() {
@@ -30,5 +39,6 @@ public class CadastroTeste extends BaseTeste {
         cadastroPagina.inseirTextoSenha("senha");
         cadastroPagina.inserirTextoConfirmarSenha("senha");
         cadastroPagina.clicarBotaoCadastrar();
+        cadastroPagina.voltarPagina();
     }
 }
