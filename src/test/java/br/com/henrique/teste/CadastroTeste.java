@@ -3,7 +3,6 @@ package br.com.henrique.teste;
 import br.com.henrique.pagina.CadastroPagina;
 import br.com.henrique.pagina.LoginPagina;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -12,7 +11,6 @@ public class CadastroTeste extends BaseTeste {
 
     private CadastroPagina cadastroPagina;
     private LoginPagina loginPagina;
-
 
     @Before
     public void iniciarObjetos() {
